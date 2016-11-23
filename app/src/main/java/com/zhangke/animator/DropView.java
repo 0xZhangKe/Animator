@@ -39,6 +39,9 @@ public class DropView extends ImageView {
     }
 
     private void initAnmator(){
+        setScaleType(ScaleType.FIT_XY);
+        setImageDrawable(context.getResources().getDrawable(R.mipmap.doge));
+
         animator=ObjectAnimator.ofFloat(this,"y",SceenHeight);
         animator.setDuration(ms);
     }
@@ -57,8 +60,7 @@ public class DropView extends ImageView {
     }
 
     private void getSceenWidthAndHeight(){
-        DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        SceenHeight=dm.heightPixels;
-        SceenWidth=dm.widthPixels;
+        SceenHeight=Utils.getScreenHeight(context);
+        SceenWidth=Utils.getScreenWidth(context);
     }
 }
