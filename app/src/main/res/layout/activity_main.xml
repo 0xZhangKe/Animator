@@ -1,17 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/click_ball"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/click_ring"/>
 
     <TextView
         android:id="@+id/tv_fuck_dogs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
-        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="26sp"
         android:textColor="#aa0664C0"
         android:text="DOGS COME"/>
+
+    <TextView
+        android:id="@+id/tv_newton_ball"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:textSize="26sp"
+        android:textColor="#aa0664C0"
+        android:text="自由落体"/>
 
     <RelativeLayout
         android:id="@+id/rl_drop_view_container"
@@ -24,4 +43,4 @@
             <!--android:scaleType="fitXY"-->
             <!--android:src="@mipmap/doge"/>-->
     </RelativeLayout>
-</FrameLayout>
+</RelativeLayout>
