@@ -3,6 +3,7 @@ package com.zhangke.animator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_fuck_dogs;
     private View click_ball;
     private TextView tv_newton_ball;
+    private ImageView img;
 
     private ArrayList<DropView> dogList=new ArrayList<>();
 
@@ -43,10 +45,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tv_fuck_dogs = (TextView) findViewById(R.id.tv_fuck_dogs);
         click_ball = findViewById(R.id.click_ball);
         tv_newton_ball = (TextView) findViewById(R.id.tv_newton_ball);
+        img = (ImageView) findViewById(R.id.img);
 
         tv_fuck_dogs.setOnClickListener(this);
         click_ball.setOnClickListener(this);
         tv_newton_ball.setOnClickListener(this);
+        img.setOnClickListener(this);
 
         dropViewWidth=Utils.dp2px(this,dropViewWidth);
         dropViewHeight=Utils.dp2px(this,dropViewHeight);
@@ -94,6 +98,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.tv_newton_ball:
                 new FreeFallAnimator(this,click_ball).start();
+                break;
+            case R.id.img:
+                ChangeImageWidthAnimator.getInstance(this, img).start();
                 break;
             default:
                 break;
